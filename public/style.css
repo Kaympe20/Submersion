@@ -8,8 +8,9 @@
     src: url('../fonts/SwimmingPool.ttf');
 }
 
-body {
+html,body {
     margin: 0;
+    padding: 0;
     text-align: center;
     color: white;
 }
