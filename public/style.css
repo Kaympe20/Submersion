@@ -1,0 +1,69 @@
+@font-face {
+    font-family: Super Water;
+    src: url('../fonts/SuperWater.ttf');
+}
+
+@font-face {
+    font-family: Swimming Pool;
+    src: url('../fonts/SwimmingPool.ttf');
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-family: Super Water;
+    letter-spacing: 0.1em;
+    font-size: 6em;
+}
+
+.wave-section {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: appear-linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wave-section h2 {
+    margin-top: 3em;
+    font-family: Swimming Pool;
+    font-size: 3em;
+}
+
+.wave-section:nth-child(2) {
+    top: 100vh;
+    background-color: #00b4db;
+    animation-timeline: scroll(200vh 100vh);
+    z-index: 2;
+}
+
+.wave-section:nth-child(3) {
+    background-color: #0042db;
+    animation-timeline: scroll(300vh 200vh);
+    top: 200vh;
+    z-index: 3;
+}
+
+.first-section {
+    width: 100vw;
+    background-color: lightblue;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+@keyframes appear {
+    to {
+        top: 0;
+    }
+}
