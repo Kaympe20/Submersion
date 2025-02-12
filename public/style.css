@@ -66,14 +66,30 @@ h1 {
     height: 100vh;
     position: fixed;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 0;
+}
+
+.first-section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-section div p br {
+    margin-bottom: 2vh;
 }
 
 @keyframes appear {
     to {
         top: 0;
     }
+}
+
+br {
+    display: block;
+    margin: 10px 0;
+    content: " ";
 }
