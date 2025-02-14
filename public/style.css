@@ -1,95 +1,279 @@
 @font-face {
-    font-family: Super Water;
-    src: url('../fonts/SuperWater.ttf');
+	font-family: Super Water;
+	src: url('../fonts/SuperWater.ttf');
 }
 
 @font-face {
-    font-family: Swimming Pool;
-    src: url('../fonts/SwimmingPool.ttf');
+	font-family: Swimming Pool;
+	src: url('../fonts/SwimmingPool.ttf');
 }
 
-html,body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: white;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: white;
+	height: 300vh;
+	overflow-x: hidden;
 }
 
 h1 {
-    font-family: Super Water;
-    letter-spacing: 0.1em;
-    font-size: 6em;
-    margin-bottom: -0.2em;
+	font-family: Super Water;
+	letter-spacing: 0.1em;
+	font-size: 6em;
+	margin-bottom: -0.2em;
 }
 
 .wave-section {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    animation: appear-linear;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(100%);
+}
+
+.wave-section .signup-container {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+	position: relative;
 }
 
 .wave-section h2 {
-    margin-top: 3em;
-    font-family: Swimming Pool;
-    font-size: 3em;
+	margin-top: 3em;
+	font-family: Swimming Pool;
+	font-size: 3em;
 }
 
 .wave-section:nth-child(2) {
-    top: 100vh;
-    background-color: #00b4db;
-    animation-timeline: scroll(200vh 100vh);
-    z-index: 2;
+	background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+	z-index: 2;
 }
 
 .wave-section:nth-child(3) {
-    background-color: #0042db;
-    animation-timeline: scroll(300vh 200vh);
-    top: 200vh;
-    z-index: 3;
+	background: linear-gradient(60deg, rgba(0, 66, 219, 1) 0%, rgba(0, 127, 219, 1) 100%);
+	z-index: 3;
 }
 
 .first-section p {
-    max-width: 1000px;
-    width: 80%;
-    font-family: DynaPuff;
-    line-height: 150%;
+	max-width: 1000px;
+	width: 80%;
+	font-family: DynaPuff;
+	line-height: 150%;
 }
 
 .first-section {
-    width: 100vw;
-    background-color: lightblue;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
+	width: 100vw;
+	background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 0;
 }
 
 .first-section div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .first-section div p br {
-    margin-bottom: 2vh;
-}
-
-@keyframes appear {
-    to {
-        top: 0;
-    }
+	margin-bottom: 2vh;
 }
 
 br {
-    display: block;
-    margin: 10px 0;
-    content: " ";
+	display: block;
+	margin: 10px 0;
+	content: " ";
+}
+
+.waves {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 15vh;
+	margin-bottom: -7px;
+	min-height: 100px;
+	max-height: 150px;
+	mix-blend-mode: overlay;
+}
+
+.parallax>use {
+	animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+	animation-delay: -2s;
+	animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+	animation-delay: -3s;
+	animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+	animation-delay: -4s;
+	animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+	animation-delay: -5s;
+	animation-duration: 20s;
+}
+
+@keyframes move-forever {
+	0% {
+		transform: translate3d(-90px, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(85px, 0, 0);
+	}
+}
+
+@media (max-width: 768px) {
+	.waves {
+		height: 40px;
+		min-height: 40px;
+	}
+}
+
+#boat {
+	animation: wiggleBoatAni 2s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#flag {
+	animation: waveFlagAni 0.3s ease infinite;
+	transform-origin: bottom left;
+	transform-box: fill-box;
+}
+
+#wave-mask {
+	animation: waterMaskAni 2s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#wave-top {
+	animation: waterWaveTopAni 2s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#wave-middle {
+	animation: waterWaveMiddleAni 2s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+#wave-bottom {
+	animation: waterWaveBottomAni 2s ease infinite;
+	transform-origin: center;
+	transform-box: fill-box;
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+}
+
+@keyframes waterMaskAni {
+	0% {
+		transform: rotateZ(-2deg) scale(1, 1) translateX(-3%);
+	}
+
+	50% {
+		transform: rotateZ(0deg) scale(1.4, 1) translateX(5%);
+	}
+
+	100% {
+		transform: rotateZ(-2deg) scale(1, 1) translateX(-3%);
+	}
+}
+
+@keyframes waterWaveTopAni {
+	0% {
+		transform: rotateZ(0deg) scale(1, 1) translateX(2%);
+		opacity: 0.5;
+	}
+
+	50% {
+		transform: rotateZ(-3deg) scale(1, 1) translateX(-5%);
+		opacity: 0.2;
+	}
+
+	100% {
+		transform: rotateZ(0deg) scale(1, 1) translateX(2%);
+		opacity: 0.5;
+	}
+}
+
+@keyframes waterWaveMiddleAni {
+	0% {
+		transform: rotateZ(0deg) scale(1, 1) translateX(-3%);
+		opacity: 0.5;
+	}
+
+	50% {
+		transform: rotateZ(-2deg) scale(1, 1) translateX(3%);
+		opacity: 0.2;
+	}
+
+	100% {
+		transform: rotateZ(0deg) scale(1, 1) translateX(-3%);
+		opacity: 0.5;
+	}
+}
+
+@keyframes waterWaveBottomAni {
+	0% {
+		transform: rotateZ(3deg) scale(1, 1) translateX(0%);
+		opacity: 0.4;
+	}
+
+	50% {
+		transform: rotateZ(-3deg) scale(1, 1) translateX(-6%);
+		opacity: 0.2;
+	}
+
+	100% {
+		transform: rotateZ(3deg) scale(1, 1) translateX(0%);
+		opacity: 0.4;
+	}
+}
+
+@keyframes wiggleBoatAni {
+	0% {
+		transform: rotateZ(-4deg) translate(0%, -3%);
+	}
+
+	50% {
+		transform: rotateZ(4deg) translate(-4%, 3%);
+	}
+
+	100% {
+		transform: rotateZ(-4deg) translate(0%, -3%);
+	}
+}
+
+@keyframes waveFlagAni {
+	0% {
+		transform: scale(1, 1) rotateZ(0deg);
+	}
+
+	50% {
+		transform: scale(1.2, 0.9) rotateZ(3deg);
+	}
+
+	100% {
+		transform: scale(1, 1) rotateZ(0deg);
+	}
 }
