@@ -465,4 +465,9 @@ br {
 	width: 100px;
 	height: auto;
 	z-index: 1000;
+	transition-duration: 0.2s;
+}
+
+.logo:hover {
+	width: 150px;
 }
