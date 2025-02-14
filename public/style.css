@@ -53,12 +53,12 @@ h1 {
 }
 
 .wave-section:nth-child(2) {
-	background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+	background: linear-gradient(60deg, rgb(50, 33, 117) 0%, rgb(9, 12, 178) 100%);
 	z-index: 2;
 }
 
 .wave-section:nth-child(3) {
-	background: linear-gradient(60deg, rgba(0, 66, 219, 1) 0%, rgba(0, 127, 219, 1) 100%);
+	background: linear-gradient(60deg, rgb(44, 3, 113) 0%, rgb(67, 4, 81) 100%);
 	z-index: 3;
 }
 
