@@ -80,8 +80,8 @@ h1 {
 	z-index: 0;
 }
 
-.first-section a {
-	color: lightblue
+a {
+	color: lightblue;
 }
 
 .first-section div {
