@@ -84,7 +84,7 @@ h1 {
 	color: lightblue
 }
 
-.first-section div submitting{
+.first-section div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
