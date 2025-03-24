@@ -199,6 +199,7 @@ h1 {
 	align-items: center;
 	justify-content: space-around;
 	transform: translateY(100%);
+	overflow: hidden;
 }
 
 .wave-section .signup-container {
